@@ -1,19 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emotion → Music Player</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">
+                <span class="music-note">♪</span>
+                <h1>Emotion Music Player</h1>
+                <span class="music-note">♫</span>
+            </div>
+            <p class="tagline">Let your feelings choose the beat</p>
+        </div>
 
-    <h2>Emotion → Music Player</h2>
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Video Container -->
+            <div class="video-container">
+                <video id="cam" autoplay playsinline></video>
+                <div class="camera-overlay">
+                    <div class="scan-line"></div>
+                </div>
+                <div class="camera-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                        <circle cx="12" cy="13" r="4"></circle>
+                    </svg>
+                </div>
+            </div>
 
-    <video id="cam" width="420" autoplay></video>
-    <h3 id="emotion">Detecting emotion...</h3>
+            <!-- Emotion Display -->
+            <div class="emotion-card">
+                <div class="emotion-emoji" id="emotionEmoji">😐</div>
+                <h2 id="emotionText">Detecting emotion...</h2>
+                <div class="pulse-ring"></div>
+            </div>
 
-    <audio id="player" controls></audio>
+            <!-- Audio Player -->
+            <div class="player-container">
+                <div class="player-header">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 18V5l12-2v13M9 13c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2z"></path>
+                    </svg>
+                    <span>Now Playing</span>
+                </div>
+                <audio id="player" controls></audio>
+                <div class="sound-waves">
+                    <span class="wave"></span>
+                    <span class="wave"></span>
+                    <span class="wave"></span>
+                    <span class="wave"></span>
+                    <span class="wave"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Hearts Animation -->
+        <div class="hearts-container" id="heartsContainer"></div>
+    </div>
 
     <script src="script.js"></script>
-
 </body>
 </html>
